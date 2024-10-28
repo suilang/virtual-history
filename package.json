@@ -1,5 +1,5 @@
 {
-    "name": "@jd/virtual-history",
+    "name": "virtual-history",
     "version": "1.0.2",
     "main": "dist/index.js",
     "module": "dist/index.js",
