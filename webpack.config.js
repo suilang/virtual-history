@@ -13,6 +13,7 @@ module.exports = (webpackConfigEnv, argv) => {
             path: path.resolve(__dirname, 'dist'), // 输出目录
             filename: 'index.js',
             clean: true,
+            libraryTarget: 'umd'
         },
         devtool: 'source-map',
         module: {

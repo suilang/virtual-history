@@ -50,6 +50,7 @@ export class VirtualHistory {
     }) => {
         if (!opts.useVirtual) {
             window.removeEventListener('popstate', this.handleHistoryChange);
+            this.destory();
             window.addEventListener('popstate', this.handleHistoryChange);
             return;
         }
@@ -117,9 +118,9 @@ export class VirtualHistory {
         this.eventListener.forEach((e) => e());
     };
 
-    handleHistoryChange() {
+    handleHistoryChange = () => {
         this.eventListener.forEach((e) => e());
-    }
+    };
 
     /**
      * Clear listening function
@@ -128,7 +129,7 @@ export class VirtualHistory {
         this.eventListener.length = 0;
     };
 
-    destory() {
+    destory = () => {
         this.clearEvent();
         window.removeEventListener('popstate', this.handleHistoryChange);
     }
